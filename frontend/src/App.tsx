@@ -1,4 +1,6 @@
 import "./App.css";
+import AdicionadorTarefas from "./organizador-de-tarefas/AdicionadorTarefas";
+import ListaTarefas from "./organizador-de-tarefas/ListaTarefas";
 import viteLogo from "/vite.svg";
 
 function App() {
@@ -19,6 +21,9 @@ function App() {
                         e backend com NestJs + TypeScript + PostgresSQL
                     </span>
                 </p>
+
+                <AdicionadorTarefas />
+                <ListaTarefas />
             </main>
             <footer>
                 <p className="descricao">

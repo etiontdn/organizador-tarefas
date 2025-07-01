@@ -2,11 +2,13 @@ import "./App.css";
 import AdicionadorTarefas from "./organizador-de-tarefas/AdicionadorTarefas";
 import ListaTarefas from "./organizador-de-tarefas/ListaTarefas";
 import viteLogo from "/vite.svg";
+import { useState } from "react";
 
 function App() {
+    const [loading, setLoading] = useState(false);
     return (
         <>
-            <main>
+            <main className={"" + (loading ? "loading" : "")}>
                 <h1 className="titulo">
                     Organizador de Tarefas
                     <img
@@ -22,8 +24,8 @@ function App() {
                     </span>
                 </p>
 
-                <AdicionadorTarefas />
-                <ListaTarefas />
+                <AdicionadorTarefas setLoading={setLoading} />
+                <ListaTarefas loading={loading} setLoading={setLoading} />
             </main>
             <footer>
                 <p className="descricao">

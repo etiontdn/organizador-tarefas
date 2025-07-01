@@ -1,4 +1,5 @@
 import React from "react";
+import "./AdicionadorTarefas.css";
 import { novaTarefa } from "./tarefasApi";
 
 async function adicionarTarefa(tarefa: string) {

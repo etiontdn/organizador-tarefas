@@ -1,0 +1,22 @@
+.adicionador-tarefas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.adicionador-tarefas input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.adicionador-tarefas button {
+    padding: 0.5rem 1rem;
+    background-color: #3fa242;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

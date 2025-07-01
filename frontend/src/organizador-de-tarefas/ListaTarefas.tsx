@@ -1,4 +1,5 @@
 import Tarefa from "./Tarefa";
+import "./ListaTarefas.css";
 import { TarefaModel } from "./Tarefa";
 import { getTarefas } from "./tarefasApi";
 import { useEffect, useState } from "react";

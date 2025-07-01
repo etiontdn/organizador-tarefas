@@ -1,5 +1,4 @@
-import { TarefaModel } from "./Tarefa";
-const endpoint = import.meta.env.VITE_API_ENDPOINT;
+const endpoint = "/api/tasks";
 async function getTarefas() {
     const response = await fetch(endpoint, {
         method: "GET",
@@ -8,18 +7,21 @@ async function getTarefas() {
         },
     });
     if (!response.ok) {
+        console.log(response);
         throw new Error("Erro ao buscar tarefas");
     }
     return response.json();
 }
 
-async function novaTarefa(tarefa: TarefaModel) {
+async function novaTarefa(tarefa: string) {
     const response = await fetch(endpoint, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
+            Accept: "application/json",
+            "Access-Control-Allow-Origin": "*",
         },
-        body: JSON.stringify(tarefa),
+        body: JSON.stringify({ tarefa }),
     });
     if (!response.ok) {
         throw new Error("Erro ao criar nova tarefa");
@@ -32,6 +34,8 @@ async function deleteTarefa(id: number) {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
+            Accept: "application/json",
+            "Access-Control-Allow-Origin": "*",
         },
     });
     if (!response.ok) {

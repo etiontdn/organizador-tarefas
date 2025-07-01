@@ -1,5 +1,6 @@
 import { deleteTarefa } from "./tarefasApi";
 import React from "react";
+import "./Tarefa.css";
 
 export class TarefaModel {
     id: number;

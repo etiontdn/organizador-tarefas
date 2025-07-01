@@ -1,12 +1,15 @@
 import React from "react";
+import { novaTarefa } from "./tarefasApi";
 
 async function adicionarTarefa(tarefa: string) {
-    console.log(tarefa); // TODO: finalizar a implementação
+    return await novaTarefa(tarefa);
 }
 
-function AdicionadorTarefas() {
-    const [loading, setLoading] = React.useState(false);
-
+function AdicionadorTarefas({
+    setLoading,
+}: {
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         setLoading(true);
         event.preventDefault();
@@ -24,7 +27,7 @@ function AdicionadorTarefas() {
     return (
         <form className="adicionador-tarefas" onSubmit={handleSubmit}>
             <input
-                className={["input-tarefa", loading ? "loading" : ""].join(" ")}
+                className="input-tarefa"
                 type="text"
                 name="tarefa"
                 placeholder="Adicionar nova tarefa..."

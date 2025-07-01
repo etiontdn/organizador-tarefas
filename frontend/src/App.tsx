@@ -9,26 +9,31 @@ function App() {
     return (
         <>
             <main className={"" + (loading ? "loading" : "")}>
-                <h1 className="titulo">
-                    Organizador de Tarefas
-                    <img
-                        className="logo"
-                        src={viteLogo}
-                        alt="logotipo do Vite"
-                    />
-                </h1>
-                <p className="descricao">
-                    Frontend feito com React + Vite + TypeScript
-                    <span className="descricao-pequena">
-                        e backend com NestJs + TypeScript + PostgresSQL
-                    </span>
-                </p>
+                <div className="text">
+                    <h1 className="titulo">
+                        Organizador de Tarefas
+                        <img
+                            className="logo"
+                            src={viteLogo}
+                            alt="logotipo do Vite"
+                        />
+                    </h1>
+                    <p className="descricao">
+                        <span>
+                            Frontend feito com React + Vite + TypeScript
+                        </span>
+                        <span className="descricao-pequena">
+                            (e backend com NestJs + TypeScript + PostgresSQL)
+                        </span>
+                    </p>
+                </div>
 
                 <AdicionadorTarefas setLoading={setLoading} />
                 <ListaTarefas loading={loading} setLoading={setLoading} />
             </main>
+            <div className={"loader" + (loading ? " loading" : "")}></div>
             <footer>
-                <p className="descricao">
+                <p className="descricao-footer">
                     Feito por mim
                     <a className="link" href="https://github.com/etiontdn">
                         João J A Silva
